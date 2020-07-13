@@ -46,7 +46,7 @@ class Painel{
     public static function imagemValida($imagem){
         if($imagem['type'] == 'image/jpeg' || $imagem['type'] == 'image/jpg' || $imagem['type'] == 'image/png'){
             $tamanho = intval($imagem['size']/1024);
-            if($tamanho < 300){
+            if($tamanho < 900){
                 return true;
             }else{
                 return false;

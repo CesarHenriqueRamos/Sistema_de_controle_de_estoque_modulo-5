@@ -56,7 +56,7 @@
             <div class="items-menu">
                     <h2>Controle Estoque</h2>
                     <a <?php selecionadoMenu('cadastrar-produtos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-produtos">Cadastrar Produtos</a>
-                    <a <?php selecionadoMenu('controle-financeiro'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>controle-financeiro">Visualizar Pagamentos</a>
+                    <a <?php selecionadoMenu('visualisar-produtos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>visualisar-produtos">Visualizar Produtos</a>
         </div>     
         <div class="clear"></div>
     </div>
