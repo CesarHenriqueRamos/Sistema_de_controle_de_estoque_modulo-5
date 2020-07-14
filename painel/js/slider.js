@@ -1,3 +1,4 @@
+//estudar o codigo
 $(function(){
  // Sistema de slide da página individual de cada carro.
   var imgShow = 3;
