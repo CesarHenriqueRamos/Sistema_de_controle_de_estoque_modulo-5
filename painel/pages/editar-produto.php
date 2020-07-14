@@ -1,6 +1,17 @@
 <?php 
 verificaPermissaoPagina(2);
 $id = $_GET['id'];
+if(isset($_GET['imagem'])){
+    $idImagem = $_GET['imagem'];
+    $sql = MySql::connect()->prepare("SELECT imagem FROM `tb_admin.estoque_imagens` WHERE id=?");
+    $sql->execute(array($idImagem));
+    $imagem = $sql->fetch()['imagem'];
+    print_r($imagem);
+    @unlink('uploads/'.$imagem);
+
+    MySql::connect()->exec("DELETE FROM `tb_admin.estoque_imagens` WHERE id='$idImagem'");
+    header('Location: '.INCLUDE_PATH_PAINEL.'editar-produto?id='.$id);
+}
 if(isset($_POST['acao'])){
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
@@ -48,26 +59,39 @@ if(isset($_POST['acao'])){
 }
 ?>
 <div class="box-container w100" <?php verificaPermissaoMenu(2);?>>
+
 <?php 
  $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.estoque_imagens` WHERE produto_id=?");
  $sql->execute(array($id));
  $imagens = $sql->fetchAll();
- foreach($imagens as $key => $value){
+ 
 ?>
-<div class="box-single-wraper">
-            <div class="box-single-editar">
-                <div class="box-body">
-                    <img id="div-img" src="<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem'];?>" alt="">
+
+<!--teste-->
+<div class="nav-galeria-parent">
+		<div class="arrow-left-nav"></div>
+		<div class="arrow-right-nav"></div>
+		<div class="nav-galeria">
+			<div class="nav-galeria-wraper">
+                <?php foreach($imagens as $key => $value){ ?>
+               
+                <div class="mini-img-wraper"><div style="background-image:url('<?php echo INCLUDE_PATH_PAINEL?>uploads/<?php echo $value['imagem'];?>');;" class="mini-img">
                     <div class="botao">                    
-                        <!--botão de deletar-->                    
-                        <a href="<?php echo INCLUDE_PATH_PAINEL?>editar-produto?id=<?php echo $id?>&imagem=<?php echo $value['id'] ?>" class="btn-delete"><div item_id=<?php echo $value['id'] ?> class="col-bt delete"><i class="fas fa-trash"></i></div><!--col--></a>
-                    </div> <!--botao--> 
-                    <!--fim dos botoes-->
-                </div><!--box-body-->                
-            </div><!--box-single-->
-        </div><!--box-single-wraper-->
-        <?php  }  ?>
+                            <!--botão de deletar-->                    
+                            <a href="<?php echo INCLUDE_PATH_PAINEL?>editar-produto?id=<?php echo $id?>&imagem=<?php echo $value['id'] ?>" class="btn-delete"><div item_id=<?php echo $value['id'] ?> class="col-bt delete"><i class="fas fa-trash"></i></div><!--col--></a>
+                        </div> <!--botao--> 
+                    </div>                
+                </div>
+          
+				<?php  }  ?>
+			</div><!--nav-galeria-wraper-->
+
+		</div><!--nav-galeria-->
+		</div><!--nav-galeria-parent-->
+
+        
 </div>
+<img src="../" alt="">
 <div class="box-container w100" <?php verificaPermissaoMenu(2);?>>
 
     <h2 class="title"><i class="fas fa-user-plus"></i> Adicionar Produto</h2>

@@ -482,18 +482,110 @@ a.btn{padding: 5px 10px;
 }
 /*manipulando a imagem*/
 #div-img{
+    margin: 0 auto;
     width: 100%;
-    max-height: 280px;
+    height: 100%;
+   
 }
+
 .box-single-editar{
     width: 100%;
     border: 1px solid #CCC;
-    min-height: 350px;
+    min-height: 220px;
+    float: left;
 }
+
 a.btn-delete{
 margin-bottom: 0;
 
 }
+#ceta-img-left{
+    margin: 90px -50px ;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.ceta{
+    background-color: red;
+    cursor: pointer;
+}
+#ceta-img-right{
+    margin: 90px -50px ;
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+/*teste*/
+.nav-galeria{
+	overflow: hidden;
+	width: 100%;
+}
+
+.nav-galeria-wraper{
+    width: 200%;
+    height: 270px;
+    
+}
+
+.nav-galeria-parent{
+	width: 100%;
+	padding:36px;
+	position: relative;
+}
+
+.arrow-left-nav{
+	position: absolute;
+	left: 8px;
+	top: 50%;
+	cursor: pointer;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%);
+	background-image:url('../../images/arrow-left.png');
+	background-size: 100% 100%;
+	width: 22px;
+	height: 22px;
+}
+
+
+
+.arrow-right-nav{
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	cursor: pointer;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%);
+	background-image:url('../../images/arrow-right.png');
+	background-size: 100% 100%;
+	width: 22px;
+	height: 22px;
+}
+
+.mini-img-wraper{
+	float: left;
+    padding:5px; 
+    margin-left: 5px;   
+    width:calc(33.3% * (100 / 200));
+    height: 245px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.mini-img{
+	width: 100%;
+	cursor: pointer;
+	padding-top:70%;
+	background-position: center;
+	background-size: cover;
+    height: 120px;
+    
+}
+
+.botao{
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;

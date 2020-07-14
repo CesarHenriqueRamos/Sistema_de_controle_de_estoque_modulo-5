@@ -56,10 +56,10 @@ MySql::connect()->exec("DELETE FROM `tb_admin.estoque_imagens` WHERE produto_id=
                 <div class="box-body">
                     <p><b><i class="fa fa-box-open"></i> Nome:</b> <?php echo $value['nome'] ?></p>
                     <p><b><i class="fa fa-box-open"></i> Descrição:</b> <?php echo $value['descricao'] ?></p>
-                    <p><b><i class="fa fa-box-open"></i> Altura:</b> <?php echo $value['altura'] ?></p>
-                    <p><b><i class="fa fa-box-open"></i> Largura:</b> <?php echo $value['largura'] ?></p>
-                    <p><b><i class="fa fa-box-open"></i> Comprimento:</b> <?php echo $value['comprimento'] ?></p>
-                    <p><b><i class="fa fa-box-open"></i> Peso:</b> <?php echo $value['peso'] ?></p>
+                    <p><b><i class="fa fa-box-open"></i> Altura:</b> <?php echo $value['altura'] ?> cm</p>
+                    <p><b><i class="fa fa-box-open"></i> Largura:</b> <?php echo $value['largura'] ?> cm</p>
+                    <p><b><i class="fa fa-box-open"></i> Comprimento:</b> <?php echo $value['comprimento'] ?> cm</p>
+                    <p><b><i class="fa fa-box-open"></i> Peso:</b> <?php echo $value['peso'] ?> g</p>
                     <p><b><i class="fa fa-box-open"></i> Quntidade:</b> <?php echo $value['quantidade'] ?></p>
                     <div class="botao">                    
                         <!--botão de editar-->
