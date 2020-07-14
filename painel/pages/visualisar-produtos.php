@@ -1,3 +1,19 @@
+<?php 
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $sql = MySql::connect()->prepare("SELECT * FROM `tb_admin.estoque_imagens` WHERE produto_id=?");
+$sql->execute(array($id));
+$imagem = $sql->fetchAll();
+foreach($imagem as $key =>$value){
+    @unlink('uploads/'.$value['imagem']);
+}
+
+
+MySql::connect()->exec("DELETE FROM `tb_admin.estoque` WHERE id=$id");
+MySql::connect()->exec("DELETE FROM `tb_admin.estoque_imagens` WHERE produto_id=$id");
+}
+
+?>
 <div class="box-container w100">
     <div class="busca">
         <h4><i class="fa fa-search"></i> Buscar Cliente</h4>
@@ -49,7 +65,7 @@
                         <!--botão de editar-->
                         <a href="<?php echo INCLUDE_PATH_PAINEL?>editar-produto?id=<?php echo $value['id'];?>" class="margem-botao"><div class="col-bt editar"><i class="fas fa-pencil-alt"></i></div><!--col--></a> 
                         <!--botão de deletar-->                    
-                        <a item_id=<?php echo $value['id'] ?> href="" class="margem-botao"><div item_id=<?php echo $value['id'] ?> class="col-bt delete"><i class="fas fa-trash"></i></div><!--col--></a>
+                        <a href="<?php echo INCLUDE_PATH_PAINEL?>visualisar-produtos?id=<?php echo $value['id'] ?>" class="margem-botao"><div item_id=<?php echo $value['id'] ?> class="col-bt delete"><i class="fas fa-trash"></i></div><!--col--></a>
                     </div> <!--botao--> 
                     <!--fim dos botoes-->
                 </div><!--box-body-->                

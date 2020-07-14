@@ -480,6 +480,20 @@ a.btn{padding: 5px 10px;
 .email{
     background-color: #00897b;
 }
+/*manipulando a imagem*/
+#div-img{
+    width: 100%;
+    max-height: 280px;
+}
+.box-single-editar{
+    width: 100%;
+    border: 1px solid #CCC;
+    min-height: 350px;
+}
+a.btn-delete{
+margin-bottom: 0;
+
+}
 @media screen and ( max-width:1200px){
     .box-container .w33{
         height: 100px;
