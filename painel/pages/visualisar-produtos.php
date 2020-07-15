@@ -55,7 +55,7 @@ MySql::connect()->exec("DELETE FROM `tb_admin.estoque_imagens` WHERE produto_id=
                 </div><!--box-top-->
                 <div class="box-body">
                     <p><b><i class="fa fa-box-open"></i> Nome:</b> <?php echo $value['nome'] ?></p>
-                    <p><b><i class="fa fa-box-open"></i> Descrição:</b> <?php echo $value['descricao'] ?></p>
+                    <!--<p><b><i class="fa fa-box-open"></i> Descrição:</b> <?php echo $value['descricao'] ?></p>-->
                     <p><b><i class="fa fa-box-open"></i> Altura:</b> <?php echo $value['altura'] ?> cm</p>
                     <p><b><i class="fa fa-box-open"></i> Largura:</b> <?php echo $value['largura'] ?> cm</p>
                     <p><b><i class="fa fa-box-open"></i> Comprimento:</b> <?php echo $value['comprimento'] ?> cm</p>

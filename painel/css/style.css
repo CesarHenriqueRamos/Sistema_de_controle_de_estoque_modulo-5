@@ -609,7 +609,9 @@ margin-bottom: 0;
         margin-bottom: 10px;
         height: auto;
     }
-    
+    .box-single-wraper{
+        width: 100%;
+   }
 }
 @media screen and (max-width:400px){
     .menu-wraper{
