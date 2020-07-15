@@ -56,7 +56,10 @@
             <div class="items-menu">
                     <h2>Controle Estoque</h2>
                     <a <?php selecionadoMenu('cadastrar-produtos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-produtos">Cadastrar Produtos</a>
+                    <a <?php selecionadoMenu('cadastrar-fornecedor'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>cadastrar-fornecedor">Cadastrar Fornecedor</a>
                     <a <?php selecionadoMenu('visualisar-produtos'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>visualisar-produtos">Visualizar Produtos</a>
+                    <a <?php selecionadoMenu('produtos-em-falta'); ?> href="<?php echo INCLUDE_PATH_PAINEL?>produtos-em-falta">Produtos em Falta</a>
+                    
         </div>     
         <div class="clear"></div>
     </div>
@@ -72,6 +75,7 @@
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/ajax.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/helperMask.js"></script>
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/slider.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/carrocelImagem.js"></script>
 <?php Painel::loadJS(array('clientes.js'),'gerenciar-cliente');?>
 <!--novos Plugus-->
 <script src="<?php echo INCLUDE_PATH_PAINEL; ?>js/jquery.maskMoney.js"></script>
